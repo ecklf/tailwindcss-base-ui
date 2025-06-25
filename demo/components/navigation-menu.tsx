@@ -1,13 +1,13 @@
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import { NavigationMenu } from "@base-ui-components/react/navigation-menu";
 import { clsx } from "clsx";
 import React from "react";
 
-const NavigationMenu = () => {
+export const NavigationMenuDemo = () => {
   return (
-    <NavigationMenuPrimitive.Root className="relative">
-      <NavigationMenuPrimitive.List className="flex flex-row rounded-lg bg-white dark:bg-gray-800 p-2 space-x-2">
-        <NavigationMenuPrimitive.Item>
-          <NavigationMenuPrimitive.Trigger
+    <NavigationMenu.Root className="relative">
+      <NavigationMenu.List className="flex flex-row p-2 space-x-2 bg-white rounded-lg dark:bg-gray-800">
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger
             className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium",
@@ -16,11 +16,11 @@ const NavigationMenu = () => {
             )}
           >
             Overview
-          </NavigationMenuPrimitive.Trigger>
+          </NavigationMenu.Trigger>
 
-          <NavigationMenuPrimitive.Content
+          <NavigationMenu.Content
             className={clsx(
-              "absolute w-auto top-0 left-0 rounded-lg",
+              "absolute top-0 left-0 w-auto rounded-lg",
               "radix-motion-from-start:animate-enter-from-left",
               "radix-motion-from-end:animate-enter-from-right",
               "radix-motion-to-start:animate-exit-to-left",
@@ -29,21 +29,21 @@ const NavigationMenu = () => {
           >
             <div className="w-[21rem] lg:w-[23rem] p-3">
               <div className="grid grid-cols-6 gap-4">
-                <div className="col-span-2 w-full bg-gray-100 dark:bg-gray-900 p-4 rounded-md" />
+                <div className="col-span-2 p-4 w-full bg-gray-100 rounded-md dark:bg-gray-900" />
 
-                <div className="col-span-4 w-full flex flex-col space-y-3 bg-gray-100 dark:bg-gray-900 p-4 rounded-md">
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
+                <div className="flex flex-col col-span-4 p-4 space-y-3 w-full bg-gray-100 rounded-md dark:bg-gray-900">
+                  <div className="w-full h-12 bg-white rounded-md dark:bg-gray-700" />
+                  <div className="w-full h-12 bg-white rounded-md dark:bg-gray-700" />
+                  <div className="w-full h-12 bg-white rounded-md dark:bg-gray-700" />
+                  <div className="w-full h-12 bg-white rounded-md dark:bg-gray-700" />
                 </div>
               </div>
             </div>
-          </NavigationMenuPrimitive.Content>
-        </NavigationMenuPrimitive.Item>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
 
-        <NavigationMenuPrimitive.Item>
-          <NavigationMenuPrimitive.Trigger
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger
             className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium text-gray-700 dark:text-gray-100",
@@ -51,11 +51,11 @@ const NavigationMenu = () => {
             )}
           >
             Resources
-          </NavigationMenuPrimitive.Trigger>
+          </NavigationMenu.Trigger>
 
-          <NavigationMenuPrimitive.Content
+          <NavigationMenu.Content
             className={clsx(
-              "absolute w-auto top-0 left-0 rounded-lg",
+              "absolute top-0 left-0 w-auto rounded-lg",
               "radix-motion-from-start:animate-enter-from-left",
               "radix-motion-from-end:animate-enter-from-right",
               "radix-motion-to-start:animate-exit-to-left",
@@ -63,10 +63,10 @@ const NavigationMenu = () => {
             )}
           >
             <div className="w-[16rem] lg:w-[18rem] p-3">
-              <div className="w-full flex flex-col space-y-2">
-                <NavigationMenuPrimitive.Link
+              <div className="flex flex-col space-y-2 w-full">
+                <NavigationMenu.Link
                   className={clsx(
-                    "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
+                    "px-4 py-3 w-full rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
                     "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                   href="https://tailwindcss.com"
@@ -79,11 +79,11 @@ const NavigationMenu = () => {
                     A utility-first CSS framework for rapidly building custom
                     user interfaces.
                   </div>
-                </NavigationMenuPrimitive.Link>
+                </NavigationMenu.Link>
 
-                <NavigationMenuPrimitive.Link
+                <NavigationMenu.Link
                   className={clsx(
-                    "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
+                    "px-4 py-3 w-full rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
                     "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                   href="https://www.radix-ui.com"
@@ -96,14 +96,14 @@ const NavigationMenu = () => {
                     An open-source UI component library for building
                     high-quality, accessible design systems and web apps.
                   </div>
-                </NavigationMenuPrimitive.Link>
+                </NavigationMenu.Link>
               </div>
             </div>
-          </NavigationMenuPrimitive.Content>
-        </NavigationMenuPrimitive.Item>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
 
-        <NavigationMenuPrimitive.Item asChild>
-          <NavigationMenuPrimitive.Link
+        <NavigationMenu.Item>
+          <NavigationMenu.Link
             href="https://github.com/ecklf/tailwindcss-radix"
             className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
@@ -111,44 +111,35 @@ const NavigationMenu = () => {
             )}
           >
             GitHub
-          </NavigationMenuPrimitive.Link>
-        </NavigationMenuPrimitive.Item>
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
 
-        <NavigationMenuPrimitive.Indicator
+      <NavigationMenu.Portal>
+        <NavigationMenu.Positioner
           className={clsx(
-            "z-10",
-            "top-[100%] flex items-end justify-center h-2 overflow-hidden",
-            "radix-state-visible:animate-fade-in",
-            "radix-state-hidden:animate-fade-out",
-            "transition-[width_transform] duration-[250ms] ease-[ease]"
+            "absolute flex justify-center",
+            "w-[140%] left-[-20%] top-[100%]"
           )}
+          style={{
+            perspective: "2000px",
+          }}
         >
-          <div className="top-1 relative bg-white dark:bg-gray-800 w-2 h-2 rotate-45" />
-        </NavigationMenuPrimitive.Indicator>
-      </NavigationMenuPrimitive.List>
-
-      <div
-        className={clsx(
-          "absolute flex justify-center",
-          "w-[140%] left-[-20%] top-[100%]"
-        )}
-        style={{
-          perspective: "2000px",
-        }}
-      >
-        <NavigationMenuPrimitive.Viewport
-          className={clsx(
-            "relative mt-2 shadow-lg rounded-md bg-white dark:bg-gray-800 overflow-hidden",
-            "w-radix-navigation-menu-viewport",
-            "h-radix-navigation-menu-viewport",
-            "radix-state-open:animate-scale-in-content",
-            "radix-state-closed:animate-scale-out-content",
-            "origin-[top_center] transition-[width_height] duration-300 ease-[ease]"
-          )}
-        />
-      </div>
-    </NavigationMenuPrimitive.Root>
+          <NavigationMenu.Popup>
+            <NavigationMenu.Viewport
+              className={clsx(
+                "overflow-hidden relative mt-2 bg-white rounded-md shadow-lg dark:bg-gray-800",
+                "w-radix-navigation-menu-viewport",
+                "h-radix-navigation-menu-viewport",
+                "radix-state-open:animate-scale-in-content",
+                "radix-state-closed:animate-scale-out-content",
+                "duration-300 origin-[top_center] transition-[width_height] ease-[ease]"
+              )}
+            />
+            <NavigationMenu.Arrow className="relative top-1 w-2 h-2 bg-white rotate-45 dark:bg-gray-800" />
+          </NavigationMenu.Popup>
+        </NavigationMenu.Positioner>
+      </NavigationMenu.Portal>
+    </NavigationMenu.Root>
   );
 };
-
-export { NavigationMenu };

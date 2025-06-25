@@ -15,7 +15,7 @@ import { Dialog } from "../components/dialog";
 import { DropdownMenu } from "../components/dropdown-menu";
 import { HoverCard } from "../components/hover-card";
 import { Menubar } from "../components/menubar";
-import { NavigationMenu } from "../components/navigation-menu";
+import { NavigationMenuDemo } from "../components/navigation-menu";
 import { Popover } from "../components/popover";
 import { Progress } from "../components/progress";
 import { RadioGroup } from "../components/radio-group";
@@ -138,7 +138,7 @@ const BASE_UI_COMPONENTS: BaseUIComponent[] = [
     center: true,
     component: (
       <div>
-        <NavigationMenu />
+        <NavigationMenuDemo />
       </div>
     ),
   },
