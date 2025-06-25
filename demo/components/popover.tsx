@@ -31,9 +31,7 @@ const Popover = () => {
   return (
     <div className="relative inline-block text-left">
       <PopoverPrimitive.Root>
-        <PopoverPrimitive.Trigger>
-          <Button>Click</Button>
-        </PopoverPrimitive.Trigger>
+        <PopoverPrimitive.Trigger render={<Button>Click</Button>} />
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Positioner sideOffset={4}>
             <PopoverPrimitive.Popup

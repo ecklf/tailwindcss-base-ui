@@ -50,7 +50,7 @@ const RADIX_COMPONENTS: RadixComponent[] = [
     link: `${REPO_URL}/components/accordion.tsx`,
     center: true,
     component: (
-      <div className="max-w-sm w-full">
+      <div className="w-full max-w-sm">
         <Accordion />
       </div>
     ),
@@ -73,7 +73,7 @@ const RADIX_COMPONENTS: RadixComponent[] = [
     label: "Avatar",
     link: `${REPO_URL}/components/avatar.tsx`,
     component: (
-      <div className="z-10 grid grid-cols-4 gap-6">
+      <div className="grid z-10 grid-cols-4 gap-6">
         <Avatar variant={Avatar.variant.Circle} />
         <Avatar variant={Avatar.variant.Circle} renderInvalidUrls isOnline />
         <Avatar variant={Avatar.variant.Rounded} />
@@ -85,7 +85,7 @@ const RADIX_COMPONENTS: RadixComponent[] = [
     label: "Checkbox",
     link: `${REPO_URL}/components/checkbox.tsx`,
     component: (
-      <div className="max-w-sm rounded-md bg-white p-3 dark:bg-gray-800">
+      <div className="p-3 max-w-sm bg-white rounded-md dark:bg-gray-800">
         <Checkbox />
       </div>
     ),
@@ -161,7 +161,7 @@ const RADIX_COMPONENTS: RadixComponent[] = [
     label: "Radio Group",
     link: `${REPO_URL}/components/radio-group.tsx`,
     component: (
-      <div className="flex items-center justify-center rounded-md bg-white px-4 py-3 dark:bg-gray-800">
+      <div className="flex justify-center items-center px-4 py-3 bg-white rounded-md dark:bg-gray-800">
         <RadioGroup />
       </div>
     ),
@@ -223,10 +223,10 @@ const RADIX_COMPONENTS: RadixComponent[] = [
 
 const Hero = () => {
   return (
-    <div className="mt-8 inline-flex w-full flex-col items-center space-y-4 justify-self-center">
+    <div className="inline-flex flex-col justify-self-center items-center mt-8 space-y-4 w-full">
       <svg
         viewBox="0 0 248 31"
-        className="h-4 w-auto text-gray-900 dark:text-white"
+        className="w-auto h-4 text-gray-900 dark:text-white"
       >
         <title>tailwindcss-radix</title>
         <path
@@ -292,7 +292,7 @@ const Hero = () => {
         </GitHubButton>
       </div>
 
-      <div className="flex items-center space-x-4 ">
+      <div className="flex items-center space-x-4">
         <div>
           <TooltipPrimitive.Provider>
             <TooltipPrimitive.Root>
@@ -305,7 +305,7 @@ const Hero = () => {
                     "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
-                  <QuestionMarkCircleIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                  <QuestionMarkCircleIcon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
                 </div>
               </TooltipPrimitive.Trigger>
               <TooltipPrimitive.Content
@@ -319,7 +319,7 @@ const Hero = () => {
                   "bg-white dark:bg-gray-800"
                 )}
               >
-                <TooltipPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
+                <TooltipPrimitive.Arrow className="text-white fill-current dark:text-gray-800" />
                 <div className="flex items-center space-x-3 text-gray-700 dark:text-gray-300">
                   <span className="block text-xs leading-none text-gray-700 dark:text-gray-100">
                     Show Menu
