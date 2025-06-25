@@ -10,9 +10,7 @@ const Dialog = () => {
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
-      <DialogPrimitive.Trigger>
-        <Button>Click</Button>
-      </DialogPrimitive.Trigger>
+      <DialogPrimitive.Trigger render={<Button>Click</Button>} />
       <DialogPrimitive.Portal keepMounted>
         <Transition.Root show={isOpen}>
           <Transition.Child

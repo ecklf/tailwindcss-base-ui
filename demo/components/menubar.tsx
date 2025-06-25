@@ -67,7 +67,7 @@ const MenubarSubTrigger = ({ children, ...rest }: MenubarSubTriggerProps) => (
 
 type MenubarItemProps = Omit<
   MenubarPrimitive.MenubarItemProps &
-    React.RefAttributes<HTMLDivElement> & { shortcut?: string },
+  React.RefAttributes<HTMLDivElement> & { shortcut?: string },
   "className"
 >;
 
@@ -96,7 +96,7 @@ const MenubarItem = ({ children, shortcut, ...rest }: MenubarItemProps) => (
 
 type MenubarCheckboxItemProps = Omit<
   MenubarPrimitive.MenubarCheckboxItemProps &
-    React.RefAttributes<HTMLDivElement>,
+  React.RefAttributes<HTMLDivElement>,
   "className"
 >;
 

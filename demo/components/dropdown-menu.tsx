@@ -76,10 +76,7 @@ const DropdownMenu = () => {
   return (
     <div className="relative inline-block text-left">
       <Menu.Root>
-        <Menu.Trigger>
-          <Button>Click</Button>
-        </Menu.Trigger>
-
+        <Menu.Trigger render={<Button>Click</Button>} />
         <Menu.Portal>
           <Menu.Positioner>
             <Menu.Popup
@@ -160,9 +157,11 @@ const DropdownMenu = () => {
 
               <Menu.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
 
-              <Menu.GroupLabel className="select-none px-2 py-2 text-xs text-gray-700 dark:text-gray-200">
-                Region Tools
-              </Menu.GroupLabel>
+              <Menu.Group>
+                <Menu.GroupLabel className="select-none px-2 py-2 text-xs text-gray-700 dark:text-gray-200">
+                  Region Tools
+                </Menu.GroupLabel>
+              </Menu.Group>
 
               {regionToolMenuItems.map(({ label, icon, shortcut }) => (
                 <Menu.Item
@@ -185,7 +184,7 @@ const DropdownMenu = () => {
               <Menu.Root>
                 <Menu.Trigger
                   className={clsx(
-                    "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
+                    "text-left flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                     "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                   )}
                 >

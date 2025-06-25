@@ -35,7 +35,7 @@ const Avatar = ({
       {urls.map((src) => (
         <AvatarPrimitive.Root
           key={`avatar-${src}`}
-          className="relative inline-flex h-10 w-10"
+          className="inline-flex relative w-10 h-10"
         >
           <AvatarPrimitive.Image
             src={src}
@@ -70,7 +70,11 @@ const Avatar = ({
               }[variant]
             )}
           >
-            <span className="text-sm font-medium uppercase text-gray-700 dark:text-gray-400">
+            <span
+              /* TODO fix this hydration warning in Next.js */
+              suppressHydrationWarning
+              className="text-sm font-medium text-gray-700 uppercase dark:text-gray-400"
+            >
               {getRandomInitials()}
             </span>
           </AvatarPrimitive.Fallback>
