@@ -35,7 +35,7 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
 const REPO_URL = "https://github.com/ecklf/tailwindcss-radix/blob/main/demo";
 
-interface RadixComponent {
+interface BaseUIComponent {
   label: string;
   link: string;
   component: JSX.Element;
@@ -44,7 +44,7 @@ interface RadixComponent {
   wrapper?: React.ReactNode;
 }
 
-const RADIX_COMPONENTS: RadixComponent[] = [
+const BASE_UI_COMPONENTS: BaseUIComponent[] = [
   {
     label: "Accordion",
     link: `${REPO_URL}/components/accordion.tsx`,
@@ -379,8 +379,8 @@ const Demo = () => {
       />
 
       <Hero />
-      <CommandMenu<RadixComponent>
-        items={RADIX_COMPONENTS}
+      <CommandMenu<BaseUIComponent>
+        items={BASE_UI_COMPONENTS}
         onSelect={({ item, modifiers }) => {
           if (modifiers.control) {
             const newWindow = window.open(item.link, "_blank");
@@ -399,7 +399,7 @@ const Demo = () => {
       />
 
       <div className="mx-auto grid w-full max-w-(--breakpoint-2xl) grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
-        {RADIX_COMPONENTS.map(({ label, link, component, center }) => (
+        {BASE_UI_COMPONENTS.map(({ label, link, component, center }) => (
           <DemoCard
             variant={center && DemoCard.variant.JustifyCenter}
             key={`demo-card-${label}`}
