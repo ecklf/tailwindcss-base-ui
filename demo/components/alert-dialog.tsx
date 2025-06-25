@@ -25,8 +25,8 @@ const AlertDialogDemo = () => {
             <AlertDialog.Backdrop
               className={clsx(
                 "fixed inset-0 z-20 bg-black/50",
-                "data-[open]:animate-in data-[open]:fade-in-0",
-                "data-[closed]:animate-out data-[closed]:fade-out-0"
+                "bui-open:animate-in bui-open:fade-in-0",
+                "bui-closed:animate-out bui-closed:fade-out-0"
               )}
             />
           </Transition.Child>
@@ -46,8 +46,8 @@ const AlertDialogDemo = () => {
                 "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
                 "bg-white dark:bg-gray-800",
                 "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
-                "data-[open]:animate-in data-[open]:fade-in-0 data-[open]:zoom-in-95",
-                "data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95"
+                "bui-open:animate-in bui-open:fade-in-0 bui-open:zoom-in-95",
+                "bui-closed:animate-out bui-closed:fade-out-0 bui-closed:zoom-out-95"
               )}
             >
               <AlertDialog.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
