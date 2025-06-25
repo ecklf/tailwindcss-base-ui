@@ -6,9 +6,11 @@ import {
   TextAlignRightIcon,
   UnderlineIcon,
 } from "@radix-ui/react-icons";
-import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
-import { clsx } from "clsx";
 import React, { type ReactElement } from "react";
+import { Toolbar } from "@base-ui-components/react/toolbar";
+import { ToggleGroup } from "@base-ui-components/react/toggle-group";
+import { Toggle } from "@base-ui-components/react/toggle";
+import { clsx } from "clsx";
 
 interface ToggleItem {
   value: string;
@@ -52,71 +54,72 @@ const textSettings: ToggleItem[] = [
   },
 ];
 
-const Toolbar = () => {
+const ToolbarDemo = () => {
   return (
-    <ToolbarPrimitive.Root className="flex space-x-4 rounded-lg bg-white px-2.5 py-2 dark:bg-gray-800">
-      <ToolbarPrimitive.ToggleGroup type="multiple" aria-label="Font settings">
-        {fontSettings.map(({ value, label, icon }, i) => (
-          <ToolbarPrimitive.ToggleItem
-            key={`group-item-${value}-${label}`}
+    <Toolbar.Root className="flex items-center gap-1 rounded-lg bg-white px-2.5 py-2 dark:bg-gray-800">
+      <ToggleGroup toggleMultiple className="flex" aria-label="Font settings">
+        {fontSettings.map(({ value, label, icon }) => (
+          <Toolbar.Button
+            key={`font-${value}`}
+            render={<Toggle />}
             value={value}
             aria-label={label}
             className={clsx(
-              "radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
+              "bui-pressed:bg-gray-50 dark:bui-pressed:bg-gray-900",
               "bg-white dark:bg-gray-800",
               "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
-              "border-gray-200 radix-state-on:border-transparent dark:border-gray-600 dark:radix-state-on:border-transparent",
+              "border-gray-200 bui-pressed:border-transparent dark:border-gray-600 dark:bui-pressed:border-transparent",
               "focus:relative focus:outline-hidden focus-visible:z-20 focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             {React.cloneElement(icon, {
               className: "w-5 h-5 text-gray-700 dark:text-gray-100",
             })}
-          </ToolbarPrimitive.ToggleItem>
+          </Toolbar.Button>
         ))}
-      </ToolbarPrimitive.ToggleGroup>
+      </ToggleGroup>
 
-      <ToolbarPrimitive.ToggleGroup
-        type="single"
-        defaultValue="center"
+      <ToggleGroup
+        defaultValue={["center"]}
+        className="flex ml-4"
         aria-label="Text settings"
       >
-        {textSettings.map(({ value, label, icon }, i) => (
-          <ToolbarPrimitive.ToggleItem
-            key={`group-item-${value}-${label}`}
+        {textSettings.map(({ value, label, icon }) => (
+          <Toolbar.Button
+            key={`text-${value}`}
+            render={<Toggle />}
             value={value}
             aria-label={label}
             className={clsx(
-              "radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
+              "bui-pressed:bg-gray-50 dark:bui-pressed:bg-gray-900",
               "bg-white dark:bg-gray-800",
               "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
-              "border-gray-200 radix-state-on:border-transparent dark:border-gray-600 dark:radix-state-on:border-transparent",
+              "border-gray-200 bui-pressed:border-transparent dark:border-gray-600 dark:bui-pressed:border-transparent",
               "focus:relative focus:outline-hidden focus-visible:z-20 focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             {React.cloneElement(icon, {
               className: "w-5 h-5 text-gray-700 dark:text-gray-100",
             })}
-          </ToolbarPrimitive.ToggleItem>
+          </Toolbar.Button>
         ))}
-      </ToolbarPrimitive.ToggleGroup>
+      </ToggleGroup>
 
-      <ToolbarPrimitive.Separator className="mx-4 my-0.5 hidden h-auto w-px dark:bg-gray-600 xl:flex" />
+      <Toolbar.Separator className="mx-4 my-0.5 hidden h-auto w-px bg-gray-300 dark:bg-gray-600 xl:flex" />
 
-      <span className="hidden items-center pr-2 xl:flex">
-        <ToolbarPrimitive.Link
-          className={clsx(
-            "text-sm text-gray-500 dark:text-gray-400",
-            "focus:outline-hidden focus-visible:z-20 focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-          )}
-          href="https://github.com/ecklf/tailwindcss-radix"
-          target="_blank"
-        >
-          Edited 2 hours ago
-        </ToolbarPrimitive.Link>
-      </span>
-    </ToolbarPrimitive.Root>
+      <Toolbar.Link
+        className={clsx(
+          "hidden items-center pr-2 text-sm text-gray-500 dark:text-gray-400 xl:flex",
+          "no-underline hover:text-purple-600 dark:hover:text-purple-400",
+          "focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-purple-500"
+        )}
+        href="https://github.com/ecklf/tailwindcss-radix"
+        target="_blank"
+      >
+        Edited 2 hours ago
+      </Toolbar.Link>
+    </Toolbar.Root>
   );
 };
 
-export { Toolbar };
+export { ToolbarDemo as Toolbar };
