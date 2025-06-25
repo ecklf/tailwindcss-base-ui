@@ -17,7 +17,7 @@ import { clsx } from "clsx";
 import React, { type ReactNode, useState } from "react";
 import Button from "./shared/button";
 
-interface RadixMenuItem {
+interface BaseUIMenuItem {
   label: string;
   shortcut?: string;
   icon?: ReactNode;
@@ -28,7 +28,7 @@ interface User {
   url?: string;
 }
 
-const generalMenuItems: RadixMenuItem[] = [
+const generalMenuItems: BaseUIMenuItem[] = [
   {
     label: "New File",
     icon: <FileIcon className="mr-2 h-3.5 w-3.5" />,
@@ -41,7 +41,7 @@ const generalMenuItems: RadixMenuItem[] = [
   },
 ];
 
-const regionToolMenuItems: RadixMenuItem[] = [
+const regionToolMenuItems: BaseUIMenuItem[] = [
   {
     label: "Frame",
     icon: <FrameIcon className="mr-2 h-3.5 w-3.5" />,
