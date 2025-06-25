@@ -1,8 +1,4 @@
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@radix-ui/react-icons";
+import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
 import { Select as SelectPrimitive } from "@base-ui-components/react/select";
 import { clsx } from "clsx";
 import React from "react";

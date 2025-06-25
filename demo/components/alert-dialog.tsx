@@ -2,15 +2,14 @@ import { Transition } from "@headlessui/react";
 import { AlertDialog } from "@base-ui-components/react/alert-dialog";
 import { clsx } from "clsx";
 import React, { Fragment, useState } from "react";
+import Button from "./shared/button";
 
 const AlertDialogDemo = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <AlertDialog.Root open={isOpen} onOpenChange={setIsOpen}>
-      <AlertDialog.Trigger className="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500">
-        Click
-      </AlertDialog.Trigger>
+      <AlertDialog.Trigger render={<Button>Click</Button>} />
       <AlertDialog.Portal keepMounted>
         <Transition.Root show={isOpen}>
           <Transition.Child

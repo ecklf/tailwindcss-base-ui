@@ -28,6 +28,7 @@ const items: AccordionItem[] = [
 const Accordion = () => {
   return (
     <AccordionPrimitive.Root
+      openMultiple={false}
       defaultValue={["item-1"]}
       className={clsx("space-y-4 w-full")}
     >
