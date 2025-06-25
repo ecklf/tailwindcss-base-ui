@@ -19,6 +19,10 @@
 
 </div>
 
+
+> [!IMPORTANT]
+> This is still a WIP, most of the code was ported with Cursor from [tailwindcss-radix](https://github.com/ecklf/tailwindcss-radix)
+
 ## What is this?
 
 The main purpose of this library is adding classnames for accessing Base UI data attributes, which gains you the benefit of auto-completion compared to using `data-*` variants.
