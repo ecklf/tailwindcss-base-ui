@@ -1,5 +1,5 @@
 import { Transition } from "@headlessui/react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Dialog as DialogPrimitive } from "@base-ui-components/react/dialog";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import { clsx } from "clsx";
 import React, { Fragment, useState } from "react";
@@ -10,10 +10,10 @@ const Dialog = () => {
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
-      <DialogPrimitive.Trigger asChild>
+      <DialogPrimitive.Trigger>
         <Button>Click</Button>
       </DialogPrimitive.Trigger>
-      <DialogPrimitive.Portal forceMount>
+      <DialogPrimitive.Portal keepMounted>
         <Transition.Root show={isOpen}>
           <Transition.Child
             as={Fragment}
@@ -24,10 +24,7 @@ const Dialog = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <DialogPrimitive.Overlay
-              forceMount
-              className="fixed inset-0 z-20 bg-black/50"
-            />
+            <DialogPrimitive.Backdrop className="fixed inset-0 z-20 bg-black/50" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -38,8 +35,7 @@ const Dialog = () => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <DialogPrimitive.Content
-              forceMount
+            <DialogPrimitive.Popup
               className={clsx(
                 "fixed z-50",
                 "w-[95vw] max-w-md rounded-lg p-4 md:w-full",
@@ -120,7 +116,7 @@ const Dialog = () => {
               >
                 <Cross1Icon className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />
               </DialogPrimitive.Close>
-            </DialogPrimitive.Content>
+            </DialogPrimitive.Popup>
           </Transition.Child>
         </Transition.Root>
       </DialogPrimitive.Portal>

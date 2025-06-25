@@ -1,4 +1,4 @@
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
+import { Collapsible as CollapsiblePrimitive } from "@base-ui-components/react/collapsible";
 import { PlayIcon, Share2Icon, TriangleRightIcon } from "@radix-ui/react-icons";
 import { clsx } from "clsx";
 import React from "react";
@@ -7,21 +7,25 @@ const Collapsible = () => {
   const [isOpen, setIsOpen] = React.useState(true);
 
   return (
-    <CollapsiblePrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
+    <CollapsiblePrimitive.Root
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      className="group"
+    >
       <CollapsiblePrimitive.Trigger
         className={clsx(
-          "group flex w-full select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium",
+          "flex w-full select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium",
           "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100",
           "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
         <div>My Playlists</div>
-        <TriangleRightIcon className="transform duration-300 ease-in-out group-radix-state-open:rotate-90" />
+        <TriangleRightIcon className="transform duration-300 ease-in-out group-bui-open:rotate-90" />
       </CollapsiblePrimitive.Trigger>
-      <CollapsiblePrimitive.Content
+      <CollapsiblePrimitive.Panel
         className={clsx(
           "overflow-hidden",
-          "radix-state-open:animate-collapsible-slide-down radix-state-closed:animate-collapsible-slide-up"
+          "bui-open:animate-collapsible-slide-down bui-closed:animate-collapsible-slide-up"
         )}
       >
         <div className="mt-4 flex flex-col space-y-4">
@@ -44,7 +48,7 @@ const Collapsible = () => {
             )
           )}
         </div>
-      </CollapsiblePrimitive.Content>
+      </CollapsiblePrimitive.Panel>
     </CollapsiblePrimitive.Root>
   );
 };

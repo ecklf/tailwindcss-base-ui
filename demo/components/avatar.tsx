@@ -1,4 +1,4 @@
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import { Avatar as AvatarPrimitive } from "@base-ui-components/react/avatar";
 import { clsx } from "clsx";
 import React, { Fragment } from "react";
 import { getRandomInitials } from "../utils/random";
@@ -69,7 +69,6 @@ const Avatar = ({
                 [Variant.Rounded]: "rounded-sm",
               }[variant]
             )}
-            delayMs={600}
           >
             <span className="text-sm font-medium uppercase text-gray-700 dark:text-gray-400">
               {getRandomInitials()}

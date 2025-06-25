@@ -1,4 +1,4 @@
-import * as ProgressPrimitive from "@radix-ui/react-progress";
+import { Progress as ProgressPrimitive } from "@base-ui-components/react/progress";
 import React, { useEffect } from "react";
 import { getRandomArbitrary } from "../utils/math";
 
@@ -25,10 +25,12 @@ const Progress = () => {
       value={progress}
       className="h-3 w-full overflow-hidden rounded-full bg-white dark:bg-gray-900"
     >
-      <ProgressPrimitive.Indicator
-        style={{ width: `${progress}%` }}
-        className="h-full bg-purple-500 duration-300 ease-in-out dark:bg-white"
-      />
+      <ProgressPrimitive.Track className="h-full w-full">
+        <ProgressPrimitive.Indicator
+          style={{ width: `${progress}%` }}
+          className="h-full bg-purple-500 duration-300 ease-in-out dark:bg-white"
+        />
+      </ProgressPrimitive.Track>
     </ProgressPrimitive.Root>
   );
 };

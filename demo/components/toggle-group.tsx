@@ -3,7 +3,8 @@ import {
   FontItalicIcon,
   UnderlineIcon,
 } from "@radix-ui/react-icons";
-import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui-components/react/toggle-group";
+import { Toggle } from "@base-ui-components/react/toggle";
 import { clsx } from "clsx";
 import React, { type ReactElement } from "react";
 
@@ -33,26 +34,25 @@ const settings: ToggleItem[] = [
 
 const ToggleGroup = () => {
   return (
-    <ToggleGroupPrimitive.Root type="multiple" aria-label="Font settings">
+    <div className="inline-flex" role="group" aria-label="Font settings">
       {settings.map(({ value, label, icon }, i) => (
-        <ToggleGroupPrimitive.Item
+        <Toggle
           key={`group-item-${value}-${label}`}
-          value={value}
           aria-label={label}
           className={clsx(
-            "group radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
+            "group bui-pressed:bg-gray-50 dark:bui-pressed:bg-gray-900",
             "bg-white dark:bg-gray-800",
             "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
-            "border-gray-200 radix-state-on:border-transparent dark:border-gray-600 dark:radix-state-on:border-transparent",
+            "border-gray-200 bui-pressed:border-transparent dark:border-gray-600 dark:bui-pressed:border-transparent",
             "focus:relative focus:outline-hidden focus-visible:z-20 focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
           {React.cloneElement(icon, {
             className: "w-5 h-5 text-gray-700 dark:text-gray-100",
           })}
-        </ToggleGroupPrimitive.Item>
+        </Toggle>
       ))}
-    </ToggleGroupPrimitive.Root>
+    </div>
   );
 };
 

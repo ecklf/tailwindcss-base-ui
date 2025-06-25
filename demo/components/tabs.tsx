@@ -1,4 +1,4 @@
-import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { Tabs as TabsPrimitive } from "@base-ui-components/react/tabs";
 import { clsx } from "clsx";
 import React from "react";
 
@@ -30,7 +30,7 @@ const Tabs = () => {
         className={clsx("flex w-full rounded-t-lg bg-white dark:bg-gray-800")}
       >
         {tabs.map(({ title, value }) => (
-          <TabsPrimitive.Trigger
+          <TabsPrimitive.Tab
             key={`tab-trigger-${value}`}
             value={value}
             className={clsx(
@@ -38,9 +38,9 @@ const Tabs = () => {
               "first:rounded-tl-lg last:rounded-tr-lg",
               "border-b first:border-r last:border-l",
               "border-gray-300 dark:border-gray-600",
-              "radix-state-active:border-b-gray-700 focus-visible:radix-state-active:border-b-transparent radix-state-inactive:bg-gray-50 dark:radix-state-active:border-b-gray-100 dark:radix-state-active:bg-gray-900 dark:focus-visible:radix-state-active:border-b-transparent dark:radix-state-inactive:bg-gray-800",
+              "bui-active:border-b-gray-700 focus-visible:bui-active:border-b-transparent bui-inactive:bg-gray-50 dark:bui-active:border-b-gray-100 dark:bui-active:bg-gray-900 dark:focus-visible:bui-active:border-b-transparent dark:bui-inactive:bg-gray-800",
               "flex-1 px-3 py-2.5",
-              "focus:radix-state-active:border-b-red",
+              "focus:bui-active:border-b-red",
               "focus:z-10 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
@@ -52,11 +52,11 @@ const Tabs = () => {
             >
               {title}
             </span>
-          </TabsPrimitive.Trigger>
+          </TabsPrimitive.Tab>
         ))}
       </TabsPrimitive.List>
       {tabs.map(({ value }) => (
-        <TabsPrimitive.Content
+        <TabsPrimitive.Panel
           key={`tab-content-${value}`}
           value={value}
           className={clsx("rounded-b-lg bg-white px-6 py-4 dark:bg-gray-800")}
@@ -70,7 +70,7 @@ const Tabs = () => {
               }[value]
             }
           </span>
-        </TabsPrimitive.Content>
+        </TabsPrimitive.Panel>
       ))}
     </TabsPrimitive.Root>
   );

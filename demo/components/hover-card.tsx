@@ -1,4 +1,4 @@
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import { PreviewCard } from "@base-ui-components/react/preview-card";
 import { clsx } from "clsx";
 import React from "react";
 
@@ -19,8 +19,8 @@ const TailwindLogo = () => (
 
 const HoverCard = () => {
   return (
-    <HoverCardPrimitive.Root>
-      <HoverCardPrimitive.Trigger asChild>
+    <PreviewCard.Root>
+      <PreviewCard.Trigger>
         <div
           className={clsx(
             "inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-2.5 dark:bg-gray-900"
@@ -28,41 +28,43 @@ const HoverCard = () => {
         >
           <TailwindLogo />
         </div>
-      </HoverCardPrimitive.Trigger>
-      <HoverCardPrimitive.Content
-        align="center"
-        sideOffset={4}
-        className={clsx(
-          " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
-          "max-w-md rounded-lg p-4 md:w-full",
-          "bg-white dark:bg-gray-800",
-          "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-        )}
-      >
-        <HoverCardPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
-
-        <div className="flex h-full w-full space-x-4">
-          <div
+      </PreviewCard.Trigger>
+      <PreviewCard.Portal>
+        <PreviewCard.Positioner sideOffset={4}>
+          <PreviewCard.Popup
             className={clsx(
-              "flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-inner bg-gray-50/60 p-2.5 dark:bg-gray-900"
+              "bui-side-top:animate-slide-up bui-side-bottom:animate-slide-down",
+              "max-w-md rounded-lg p-4 md:w-full",
+              "bg-white dark:bg-gray-800",
+              "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
-            <TailwindLogo />
-          </div>
+            <PreviewCard.Arrow className="fill-current text-white dark:text-gray-800" />
 
-          <div>
-            <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">
-              Tailwind CSS
-            </h3>
+            <div className="flex h-full w-full space-x-4">
+              <div
+                className={clsx(
+                  "flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-inner bg-gray-50/60 p-2.5 dark:bg-gray-900"
+                )}
+              >
+                <TailwindLogo />
+              </div>
 
-            <p className="mt-1 text-sm font-normal text-gray-700 dark:text-gray-400">
-              A utility-first CSS framework for rapidly building custom user
-              interfaces.
-            </p>
-          </div>
-        </div>
-      </HoverCardPrimitive.Content>
-    </HoverCardPrimitive.Root>
+              <div>
+                <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  Tailwind CSS
+                </h3>
+
+                <p className="mt-1 text-sm font-normal text-gray-700 dark:text-gray-400">
+                  A utility-first CSS framework for rapidly building custom user
+                  interfaces.
+                </p>
+              </div>
+            </div>
+          </PreviewCard.Popup>
+        </PreviewCard.Positioner>
+      </PreviewCard.Portal>
+    </PreviewCard.Root>
   );
 };
 

@@ -75,7 +75,7 @@ function CommandMenu<T extends { label: string }>({
             "bg-transparent",
             "block w-full",
             "text-sm font-medium text-gray-700 dark:text-gray-300 placeholder:text-gray-600 dark:placeholder:text-gray-500",
-            "focus:outline-hidden border-none focus:border-transparent focus-visible:ring-transparent"
+            "border-none focus:outline-hidden focus:border-transparent focus-visible:ring-transparent"
           )}
         />
         <kbd
@@ -102,7 +102,7 @@ function CommandMenu<T extends { label: string }>({
         }}
         className="py-2 px-2 w-full max-h-[50vh] overflow-y-auto"
       >
-        <Command.Empty className="px-3 py-3 text-sm text-gray-700 dark:text-gray-300 flex items-center space-x-2">
+        <Command.Empty className="flex items-center px-3 py-3 space-x-2 text-sm text-gray-700 dark:text-gray-300">
           <DocumentMagnifyingGlassIcon className="w-5 h-5" />
           <span className="font-medium">No Results</span>
         </Command.Empty>
@@ -116,9 +116,9 @@ function CommandMenu<T extends { label: string }>({
             className={clsx(
               "px-3 py-3",
               "cursor-pointer",
-              "flex items-center rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium",
+              "flex items-center text-sm font-medium text-gray-700 rounded-md dark:text-gray-300",
               "aria-selected:bg-black/10 dark:aria-selected:bg-white/10",
-              "focus:outline-hidden select-none"
+              "select-none focus:outline-hidden"
             )}
           >
             {item.label}
@@ -128,7 +128,7 @@ function CommandMenu<T extends { label: string }>({
       <div className="h-px bg-gray-300/70 dark:bg-gray-300/10" />
       <div className="ml-px pl-3.5 pr-5 w-full flex items-center justify-between py-2">
         <svg
-          className="h-3 w-3 text-black dark:text-white fill-current"
+          className="w-3 h-3 text-black fill-current dark:text-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -136,15 +136,15 @@ function CommandMenu<T extends { label: string }>({
           <path d="M24 22.525H0l12-21.05 12 21.05z" />
         </svg>
 
-        <div className="flex items-center text-gray-700 dark:text-gray-300 space-x-3">
-          <div className="flex items-center space-x-2 ">
+        <div className="flex items-center space-x-3 text-gray-700 dark:text-gray-300">
+          <div className="flex items-center space-x-2">
             <span className="text-xs">Go to</span>
             <kbd className="w-auto h-5 flex items-center justify-center select-none hover:cursor-pointer rounded-md font-bold bg-black/10 dark:bg-white/10 pb-1 px-1.5">
               ↵
             </kbd>
           </div>
           <DividerVerticalIcon className="opacity-30" />
-          <div className="flex items-center space-x-2 ">
+          <div className="flex items-center space-x-2">
             <span className="text-xs">Open code</span>
             <div className="flex items-center space-x-1">
               <kbd className="w-auto h-5 flex items-center justify-center select-none hover:cursor-pointer rounded-md font-bold bg-black/10 dark:bg-white/10 pt-1 px-1.5">

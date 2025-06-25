@@ -1,4 +1,4 @@
-import * as SliderPrimitive from "@radix-ui/react-slider";
+import { Slider as SliderPrimitive } from "@base-ui-components/react/slider";
 import { clsx } from "clsx";
 import React from "react";
 
@@ -12,7 +12,7 @@ const Slider = () => {
       className="relative flex h-5 w-64 touch-none items-center"
     >
       <SliderPrimitive.Track className="relative h-1 w-full grow rounded-full bg-white dark:bg-gray-800">
-        <SliderPrimitive.Range className="absolute h-full rounded-full bg-purple-600 dark:bg-white" />
+        <SliderPrimitive.Indicator className="absolute h-full rounded-full bg-purple-600 dark:bg-white" />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
         className={clsx(
