@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should generate [width|height] utilities 1`] = `
+".w-bui-accordion-panel {
+    width: var(--accordion-panel-width)
+}
+.h-bui-accordion-panel {
+    height: var(--accordion-panel-height)
+}
+.w-bui-active-tab {
+    width: var(--active-tab-width)
+}
+.h-bui-anchor {
+    height: var(--anchor-height)
+}
+.w-bui-available {
+    width: var(--available-width)
+}
+.h-bui-collapsible-panel {
+    height: var(--collapsible-panel-height)
+}
+.w-bui-popup {
+    width: var(--popup-width)
+}
+.h-bui-positioner {
+    height: var(--positioner-height)
+}
+.w-bui-scroll-area-corner {
+    width: var(--scroll-area-corner-width)
+}
+.h-bui-scroll-area-thumb {
+    height: var(--scroll-area-thumb-height)
+}"
+`;
+
+exports[`should generate \`content-transform-origin\` utilities 1`] = `
+".origin-bui {
+    transform-origin: var(--transform-origin)
+}"
+`;
+
+exports[`should generate tooltip transform utilities 1`] = `
+".translate-x-bui-toast-swipe-movement-x {
+    transform: translateX(var(--toast-swipe-movement-x))
+}
+.translate-y-bui-toast-swipe-movement-y {
+    transform: translateY(var(--toast-swipe-movement-y))
+}
+.translate-y-bui-toast-offset-y {
+    transform: translateY(var(--toast-offset-y))
+}"
+`;
+
+exports[`should generate value data attribute variants 1`] = `
+".bui-open\\:opacity-50[data-open] {
+    opacity: 0.5
+}"
+`;
