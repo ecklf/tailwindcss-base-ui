@@ -78,9 +78,10 @@ const DropdownMenu = () => {
       <Menu.Root>
         <Menu.Trigger render={<Button>Click</Button>} />
         <Menu.Portal>
-          <Menu.Positioner>
+          <Menu.Positioner side="right">
             <Menu.Popup
               className={clsx(
+                "bui-origin mt-6 absolute right-0",
                 "bui-side-top:animate-slide-up bui-side-bottom:animate-slide-down",
                 "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
                 "bg-white dark:bg-gray-800"
