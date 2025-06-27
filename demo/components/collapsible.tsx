@@ -34,13 +34,13 @@ const Collapsible = () => {
               <div
                 key={`collapsible-${title}`}
                 className={clsx(
-                  "group",
+                  "group/panel",
                   "ml-12 flex select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium",
                   "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-900"
                 )}
               >
                 {title}
-                <div className="hidden items-center space-x-3 group-hover:flex">
+                <div className="hidden items-center space-x-3 group-hover/panel:flex">
                   <Share2Icon className="cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" />
                   <PlayIcon className="cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" />
                 </div>
