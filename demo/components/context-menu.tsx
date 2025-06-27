@@ -83,9 +83,10 @@ const ContextMenuDemo = () => {
 
         <ContextMenu.Portal>
           <ContextMenu.Backdrop />
-          <ContextMenu.Positioner>
+          <ContextMenu.Positioner className="outline-none">
             <ContextMenu.Popup
               className={clsx(
+                "origin-bui",
                 "bui-side-top:animate-slide-up bui-side-bottom:animate-slide-down",
                 "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
                 "bg-white dark:bg-gray-800"
@@ -199,9 +200,10 @@ const ContextMenuDemo = () => {
                   <CaretRightIcon className="h-3.5 w-3.5" />
                 </Menu.SubmenuTrigger>
                 <Menu.Portal>
-                  <Menu.Positioner>
+                  <Menu.Positioner className="outline-none">
                     <Menu.Popup
                       className={clsx(
+                        "origin-bui",
                         "bui-side-right:animate-scale-in",
                         "w-full rounded-md px-1 py-1 text-xs shadow-md",
                         "bg-white dark:bg-gray-800"
