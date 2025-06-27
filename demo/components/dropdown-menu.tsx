@@ -183,7 +183,7 @@ const DropdownMenu = () => {
               <Menu.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
 
               <Menu.Root>
-                <Menu.Trigger
+                <Menu.SubmenuTrigger
                   className={clsx(
                     "text-left flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                     "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
@@ -194,7 +194,7 @@ const DropdownMenu = () => {
                     Share
                   </span>
                   <CaretRightIcon className="h-3.5 w-3.5" />
-                </Menu.Trigger>
+                </Menu.SubmenuTrigger>
                 <Menu.Portal>
                   <Menu.Positioner>
                     <Menu.Popup
