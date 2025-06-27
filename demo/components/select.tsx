@@ -7,36 +7,54 @@ import Button from "./shared/button";
 const Select = () => {
   return (
     <SelectPrimitive.Root defaultValue="blueberry">
-      <SelectPrimitive.Trigger render={<Button />} aria-label="Food">
+      <SelectPrimitive.Trigger
+        render={
+          <Button>
+            <SelectPrimitive.Value placeholder="Blueberry" />
+          </Button>
+        }
+        aria-label="Food"
+      >
         <SelectPrimitive.Value placeholder="Select a fruit" />
         <SelectPrimitive.Icon className="ml-2">
           <ChevronDownIcon />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
       <SelectPrimitive.Portal>
-        <SelectPrimitive.Positioner>
-          <SelectPrimitive.Popup className="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg">
-            <SelectPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
+        <SelectPrimitive.Positioner className="outline-none" sideOffset={8}>
+          <SelectPrimitive.ScrollUpArrow />
+
+          <SelectPrimitive.Popup
+            className={clsx(
+              "group [max-height:var(--available-height)] bui-origin",
+              "overflow-y-auto bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg"
+            )}
+          >
             {["Apple", "Banana", "Blueberry", "Strawberry", "Grapes"].map(
               (f) => (
                 <SelectPrimitive.Item
-                  disabled={f === "Grapes"}
                   key={`select-primitive-item-${f}`}
-                  value={f.toLowerCase()}
                   className={clsx(
-                    "relative flex items-center px-8 py-2 rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium focus:bg-gray-100 dark:focus:bg-gray-900",
+                    "flex items-center rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium",
+                    "bui-highlighted:bg-gray-100 dark:bui-highlighted:bg-gray-900",
                     "bui-disabled:opacity-50",
-                    "focus:outline-hidden select-none"
+                    "focus:outline-hidden select-none",
+                    "grid cursor-default grid-cols-[0.75rem_1fr] items-center gap-2 py-2 pr-4 pl-2.5",
+                    "bui-highlighted:relative bui-highlighted:z-0"
                   )}
+                  value={f.toLowerCase()}
                 >
-                  <SelectPrimitive.ItemText>{f}</SelectPrimitive.ItemText>
-                  <SelectPrimitive.ItemIndicator className="absolute left-2 inline-flex items-center">
-                    <CheckIcon />
+                  <SelectPrimitive.ItemIndicator className="col-start-1">
+                    <CheckIcon className="size-3" />
                   </SelectPrimitive.ItemIndicator>
+                  <SelectPrimitive.ItemText className="col-start-2">
+                    {f}
+                  </SelectPrimitive.ItemText>
                 </SelectPrimitive.Item>
               )
             )}
           </SelectPrimitive.Popup>
+          <SelectPrimitive.ScrollDownArrow />
         </SelectPrimitive.Positioner>
       </SelectPrimitive.Portal>
     </SelectPrimitive.Root>
