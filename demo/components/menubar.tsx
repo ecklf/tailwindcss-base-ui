@@ -26,7 +26,7 @@ const MenubarTrigger = ({
 }: { children?: React.ReactNode }) => (
   <Menu.Trigger
     className={clsx(
-      "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
+      "cursor-default bui-disabled:opacity-50 bui-disabled:cursor-not-allowed",
       "radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
       "px-4 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
@@ -45,7 +45,7 @@ const MenubarSubTrigger = ({
 }: { children?: React.ReactNode }) => (
   <Menu.SubmenuTrigger
     className={clsx(
-      "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
+      "cursor-default bui-disabled:opacity-50 bui-disabled:cursor-not-allowed",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
       "text-gray-700 dark:text-gray-100",
@@ -68,7 +68,7 @@ const MenubarItem = ({
 }: { children?: React.ReactNode; shortcut?: string; disabled?: boolean }) => (
   <Menu.Item
     className={clsx(
-      "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
+      "cursor-default bui-disabled:opacity-50 bui-disabled:cursor-not-allowed",
       "flex justify-between items-center w-full",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
@@ -101,7 +101,7 @@ const MenubarCheckboxItem = ({
 }) => (
   <Menu.CheckboxItem
     className={clsx(
-      "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
+      "cursor-default bui-disabled:opacity-50 bui-disabled:cursor-not-allowed",
       "flex justify-between items-center w-full",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
@@ -128,7 +128,7 @@ const MenubarRadioItem = ({
 }: { children?: React.ReactNode; value?: string }) => (
   <Menu.RadioItem
     className={clsx(
-      "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
+      "cursor-default bui-disabled:opacity-50 bui-disabled:cursor-not-allowed",
       "flex justify-between items-center w-full",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
@@ -159,12 +159,12 @@ const MenubarComponent = () => {
   const contentClasses = "bg-white dark:bg-gray-800 rounded-md p-1 origin-bui";
 
   return (
-    <Menubar className="flex relative flex-row -space-x-1 bg-white rounded-lg dark:bg-gray-800">
+    <Menubar className="relative bg-white rounded-lg dark:bg-gray-800">
       <Menu.Root>
         <MenubarTrigger>File</MenubarTrigger>
         <Menu.Portal>
           <Menu.Backdrop />
-          <Menu.Positioner>
+          <Menu.Positioner sideOffset={3}>
             <Menu.Popup className={contentClasses}>
               <Menu.Arrow />
               <MenubarItem shortcut="⌘ T">New Tab</MenubarItem>
@@ -197,7 +197,7 @@ const MenubarComponent = () => {
         <MenubarTrigger>Edit</MenubarTrigger>
         <Menu.Portal>
           <Menu.Backdrop />
-          <Menu.Positioner>
+          <Menu.Positioner sideOffset={3}>
             <Menu.Popup className={contentClasses}>
               <Menu.Arrow />
               <MenubarItem shortcut="⌘ Z">Undo</MenubarItem>
@@ -232,7 +232,7 @@ const MenubarComponent = () => {
         <MenubarTrigger>View</MenubarTrigger>
         <Menu.Portal>
           <Menu.Backdrop />
-          <Menu.Positioner>
+          <Menu.Positioner sideOffset={3}>
             <Menu.Popup className={contentClasses}>
               <Menu.Arrow />
               {CHECK_ITEMS.map((item) => (
@@ -268,7 +268,7 @@ const MenubarComponent = () => {
         <MenubarTrigger>Profiles</MenubarTrigger>
         <Menu.Portal>
           <Menu.Backdrop />
-          <Menu.Positioner>
+          <Menu.Positioner sideOffset={3}>
             <Menu.Popup className={contentClasses}>
               <Menu.Arrow />
               <Menu.RadioGroup
