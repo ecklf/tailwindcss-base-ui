@@ -38,9 +38,9 @@ const Tabs = () => {
               "first:rounded-tl-lg last:rounded-tr-lg",
               "border-b first:border-r last:border-l",
               "border-gray-300 dark:border-gray-600",
-              "bui-active:border-b-gray-700 focus-visible:bui-active:border-b-transparent bui-inactive:bg-gray-50 dark:bui-active:border-b-gray-100 dark:bui-active:bg-gray-900 dark:focus-visible:bui-active:border-b-transparent dark:bui-inactive:bg-gray-800",
+              "bui-selected:border-b-gray-700 focus-visible:bui-selected:border-b-transparent bui-inactive:bg-gray-50 dark:bui-selected:border-b-gray-100 dark:bui-selected:bg-gray-900 dark:focus-visible:bui-selected:border-b-transparent dark:bui-inactive:bg-gray-800",
               "flex-1 px-3 py-2.5",
-              "focus:bui-active:border-b-red",
+              "focus:bui-selected:border-b-red",
               "focus:z-10 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
