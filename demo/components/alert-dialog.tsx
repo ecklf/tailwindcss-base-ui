@@ -10,7 +10,7 @@ const AlertDialog = () => {
       <AlertDialogPrimitive.Portal>
         <AlertDialogPrimitive.Backdrop
           className={clsx(
-            "fixed inset-0 bg-black opacity-20 dark:opacity-70 transition-opacity",
+            "fixed z-50 inset-0 bg-black opacity-20 dark:opacity-70 transition-opacity",
             "bui-ending-style:duration-200 bui-ending-style:ease-in bui-ending-style:opacity-0",
             "bui-starting-style:duration-300 bui-starting-style:ease-out bui-starting-style:opacity-0"
           )}
