@@ -35,7 +35,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.0",
-    "tailwindcss-base-ui": "file:../",
+    "tailwindcss-base-ui": "4.0.0-beta.0",
     "typescript": "^5.4.3"
   }
 }
