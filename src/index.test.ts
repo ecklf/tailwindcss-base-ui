@@ -2,7 +2,7 @@ import path from "node:path";
 import postcss from "postcss";
 import tailwind, { type Config } from "tailwindcss";
 import { expect, it } from "vitest";
-import radix from "./index";
+import baseUI from "./index";
 
 const html = String.raw;
 
@@ -33,7 +33,7 @@ it("should generate boolean data attribute variants", async () => {
         `,
       },
     ],
-    plugins: [radix],
+    plugins: [baseUI],
   };
 
   return run("@tailwind utilities", config).then((result) => {
@@ -64,7 +64,7 @@ it("should generate value data attribute variants", async () => {
         `,
       },
     ],
-    plugins: [radix],
+    plugins: [baseUI],
   };
 
   return run("@tailwind utilities", config).then((result) => {
@@ -90,7 +90,7 @@ it("should generate [width|height] utilities", async () => {
         `,
       },
     ],
-    plugins: [radix],
+    plugins: [baseUI],
   };
 
   return run("@tailwind utilities", config).then((result) => {
@@ -107,7 +107,7 @@ it("should generate `content-transform-origin` utilities", async () => {
         `,
       },
     ],
-    plugins: [radix],
+    plugins: [baseUI],
   };
 
   return run("@tailwind utilities", config).then((result) => {
@@ -126,7 +126,7 @@ it("should generate tooltip transform utilities", async () => {
         `,
       },
     ],
-    plugins: [radix],
+    plugins: [baseUI],
   };
 
   return run("@tailwind utilities", config).then((result) => {
