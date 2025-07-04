@@ -39,6 +39,12 @@ exports[`should generate \`content-transform-origin\` utilities 1`] = `
 }"
 `;
 
+exports[`should generate \`z-index\` utilities 1`] = `
+".z-bui-toast {
+    z-index: calc(1000-var(--toast-index))
+}"
+`;
+
 exports[`should generate tooltip transform utilities 1`] = `
 ".translate-x-bui-toast-swipe-movement-x {
     transform: translateX(var(--toast-swipe-movement-x))

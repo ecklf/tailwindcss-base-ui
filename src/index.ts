@@ -32,7 +32,6 @@ export = plugin.withOptions<Options>(
         hovering: "hovering",
         indeterminate: "indeterminate",
         invalid: "invalid",
-        // verify this works
         limited: "limited",
         multiple: "multiple",
         nested: "nested",
@@ -48,7 +47,6 @@ export = plugin.withOptions<Options>(
         scrubbing: "scrubbing",
         selected: "selected",
         "starting-style": "starting-style",
-        // verify this works
         swiping: "swiping",
         touched: "touched",
         uncentered: "uncentered",
@@ -64,7 +62,7 @@ export = plugin.withOptions<Options>(
         },
         {
           values: booleanAttributes,
-        }
+        },
       );
 
       // Adds variants for value data attributes
@@ -80,7 +78,7 @@ export = plugin.withOptions<Options>(
         // "type": "string",
       } as const)) {
         const values = Object.fromEntries(
-          attributeValues.map((item) => [item, item])
+          attributeValues.map((item) => [item, item]),
         );
 
         matchVariant(
@@ -90,7 +88,7 @@ export = plugin.withOptions<Options>(
           },
           {
             values,
-          }
+          },
         );
       }
 
@@ -153,6 +151,12 @@ export = plugin.withOptions<Options>(
         },
       });
 
+      addUtilities({
+        [`.z-${variantPrefix}-toast`]: {
+          "z-index": "calc(1000-var(--toast-index))",
+        },
+      });
+
       // TODO: Add support for the following data attributes
       // "--active-tab-top": "number",
       // "--active-tab-bottom": "number",
@@ -160,5 +164,5 @@ export = plugin.withOptions<Options>(
       // "--active-tab-right": "number",
       // "--toast-index": "number",
       // "--nested-dialogs": "number",
-    }
+    },
 );

@@ -115,6 +115,23 @@ it("should generate `content-transform-origin` utilities", async () => {
   });
 });
 
+it("should generate `z-index` utilities", async () => {
+  const config = {
+    content: [
+      {
+        raw: html`
+          <div class="z-bui-toast" />
+        `,
+      },
+    ],
+    plugins: [baseUI],
+  };
+
+  return run("@tailwind utilities", config).then((result) => {
+    expect(result.css).toMatchSnapshot();
+  });
+});
+
 it("should generate tooltip transform utilities", async () => {
   const config = {
     content: [
